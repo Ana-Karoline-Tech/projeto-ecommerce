@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-comerce Master</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/cabecalho.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <a href="/">
-        <img src="./assets/images/logo.svg" alt="Logo E-comerce Master" />
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre-nos">Sobre Nós</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#perguntas-frequentes">Perguntas Frequentes</a></li>
-          <li><a href="#faq">Fale Conosco</a></li>
-        </ul>
-      </nav>
-      <button>
-        <img
-          src="./assets/images/icone_carrinho.svg"
-          alt="Carrinho de Compras"
-        />
-      </button>
+    <header class="cabecalho menu-ativo">
+      <div class="header-conteudo">
+        <div class="header-esquerda">
+          <button class="menu-hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a class="logo" href="/">
+            <img src="./assets/images/logo.svg" alt="Logo E-comerce Master" />
+          </a>
+        </div>
+        <nav class="menu-principal"> 
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre-nos">Sobre Nós</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas Frequentes</a></li>
+            <li><a href="#faq">Fale Conosco</a></li>
+          </ul>
+        </nav>
+        <button class="botao-carrinho" data-micromodal-trigger="modal-1">
+          <img
+            src="./assets/images/icone_carrinho.svg"
+            alt="Carrinho de Compras"
+          />
+          <span id="contador-carrinho">0</span>
+        </button>
+      </div>
     </header>
     <main>
       <section>
@@ -123,66 +137,102 @@
 
           <div id="modal-1-content">
             <table>
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Dev Em Dobro - Roxa" width="50" />
-                        </td>
-                        <td>Camiseta Dev Em Dobro - Roxa</td>
-                        <td>R$ 89,00</td>
-                        <td> <input type="number" value="1" min="1"> </td>
-                        <td>R$ 89,00</td>
-                        <td>
-                            <button id="deletar" aria-label="Remover produto do carrinho">Deletar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="./assets/images/caneca_devemdobro.jpg" alt="Caneca Dev Em Dobro" width="50" />
-                        </td>
-                        <td>Caneca Dev Em Dobro</td>
-                        <td>R$ 89,00</td>
-                        <td> <input type="number" value="1" min="1"> </td>
-                        <td>R$ 89,00</td>
-                        <td>
-                            <button id="deletar" aria-label="Remover produto do carrinho">Deletar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Dev Em Dobro - Roxa" width="50" />
-                        </td>
-                        <td>Camiseta Dev Em Dobro - Roxa</td>
-                        <td>R$ 89,00</td>
-                        <td> <input type="number" value="1" min="1"> </td>
-                        <td>R$ 89,00</td>
-                        <td>
-                            <button id="deletar" aria-label="Remover produto do carrinho">Deletar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="./assets/images/camiseta_roxa.jpg" alt="Camiseta Dev Em Dobro - Roxa" width="50" />
-                        </td>
-                        <td>Camiseta Dev Em Dobro - Roxa </td>
-                        <td>R$ 89,00</td>
-                        <td> <input type="number" value="1" min="1"> </td>
-                        <td>R$ 89,00</td>
-                        <td>
-                            <button id="deletar" aria-label="Remover produto do carrinho">Deletar</button>
-                        </td>
-                    </tr>
-                </tbody>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Descrição</th>
+                  <th>Preço</th>
+                  <th>Quantidade</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/camiseta_roxa.jpg"
+                      alt="Camiseta Dev Em Dobro - Roxa"
+                      width="50"
+                    />
+                  </td>
+                  <td>Camiseta Dev Em Dobro - Roxa</td>
+                  <td>R$ 89,00</td>
+                  <td><input type="number" value="1" min="1" /></td>
+                  <td>R$ 89,00</td>
+                  <td>
+                    <button
+                      id="deletar"
+                      aria-label="Remover produto do carrinho"
+                    >
+                      Deletar
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/caneca_devemdobro.jpg"
+                      alt="Caneca Dev Em Dobro"
+                      width="50"
+                    />
+                  </td>
+                  <td>Caneca Dev Em Dobro</td>
+                  <td>R$ 89,00</td>
+                  <td><input type="number" value="1" min="1" /></td>
+                  <td>R$ 89,00</td>
+                  <td>
+                    <button
+                      id="deletar"
+                      aria-label="Remover produto do carrinho"
+                    >
+                      Deletar
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/camiseta_roxa.jpg"
+                      alt="Camiseta Dev Em Dobro - Roxa"
+                      width="50"
+                    />
+                  </td>
+                  <td>Camiseta Dev Em Dobro - Roxa</td>
+                  <td>R$ 89,00</td>
+                  <td><input type="number" value="1" min="1" /></td>
+                  <td>R$ 89,00</td>
+                  <td>
+                    <button
+                      id="deletar"
+                      aria-label="Remover produto do carrinho"
+                    >
+                      Deletar
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/camiseta_roxa.jpg"
+                      alt="Camiseta Dev Em Dobro - Roxa"
+                      width="50"
+                    />
+                  </td>
+                  <td>Camiseta Dev Em Dobro - Roxa</td>
+                  <td>R$ 89,00</td>
+                  <td><input type="number" value="1" min="1" /></td>
+                  <td>R$ 89,00</td>
+                  <td>
+                    <button
+                      id="deletar"
+                      aria-label="Remover produto do carrinho"
+                    >
+                      Deletar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
             </table>
 
             <div>
