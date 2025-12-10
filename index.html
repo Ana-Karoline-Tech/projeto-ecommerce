@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/cabecalho.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/produtos.css" />
+    <link rel="stylesheet" href="css/rodape.css" />
+    <link rel="stylesheet" href="css/footer.css" />
   </head>
   <body>
     <header class="cabecalho menu-ativo">
@@ -30,7 +32,7 @@
             <img src="./assets/images/logo.svg" alt="Logo E-comerce Master" />
           </a>
         </div>
-        <nav class="menu-principal"> 
+        <nav class="menu-principal">
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre-nos">Sobre Nós</a></li>
@@ -49,10 +51,10 @@
       </div>
     </header>
     <main>
-      <section>
+      <section class="produtos">
         <h2>Produtos</h2>
         <ul>
-          <li>
+          <li class="produto" data-id="camiseta-roxa">
             <figure>
               <img
                 src="./assets/images/camiseta_roxa.jpg"
@@ -60,14 +62,16 @@
               />
               <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
             </figure>
-            <div>
-              <span>Cor: Roxa</span>
-              <span>Tamanho: M</span>
-              <span>Preço: R$ 89,00</span>
-              <button>Adicionar ao Carrinho</button>
+            <div class="informacoes">
+              <span><strong>Cor: Roxa</strong></span>
+              <span><strong>Tamanho: M</strong></span>
+              <span class="preco">Preço: R$ 89,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
             </div>
           </li>
-          <li>
+          <li class="produto" data-id="camiseta-roxa">
             <figure>
               <img
                 src="./assets/images/camiseta_roxa.jpg"
@@ -75,63 +79,198 @@
               />
               <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
             </figure>
-            <div>
-              <span>Cor: Branca</span>
-              <span>Tamanho: P</span>
-              <span>Preço: R$ 100,00</span>
-              <button>Adicionar ao Carrinho</button>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/caneca_devemdobro.jpg"
+                alt="Caneca Dev Em Dobro Roxa"
+              />
+              <figcaption>Caneca Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span> <br />
+              <!-- <span><strong>Tamanho: P</strong></span> -->
+              <span class="preco">Preço: R$ 89,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </li>
+          <li class="produto" data-id="camiseta-roxa">
+            <figure>
+              <img
+                src="./assets/images/camiseta_roxa.jpg"
+                alt="Camiseta Dev Em Dobro Roxa"
+              />
+              <figcaption>Camiseta Dev Em Dobro - Roxa</figcaption>
+            </figure>
+            <div class="informacoes">
+              <span><strong>Cor: Branca</strong></span>
+              <span><strong>Tamanho: P</strong></span>
+              <span class="preco">Preço: R$ 100,00</span>
+              <button class="adicionar-ao-carrinho">
+                Adicionar ao Carrinho
+              </button>
             </div>
           </li>
         </ul>
       </section>
     </main>
-    <footer>
-      <nav>
-        <h3>Institucional</h3>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#sobre-nos">Sobre</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
-          <li><a href="#faq">Fale Conosco</a></li>
-        </ul>
-      </nav>
-      <nav>
-        <h3>Ajuda</h3>
-        <ul>
-          <li><a href="#trocas">Trocas e Devoluções</a></li>
-          <li><a href="#termos">Termos e Condições</a></li>
-          <li><a href="#politica">Política de Privacidade</a></li>
-          <li><a href="#padrao">Padrão de Qualidade</a></li>
-        </ul>
-      </nav>
-      <nav>
-        <h3>Endereço</h3>
-        <ul>
-          <li><a href="#">Rua Vale do Silício</a></li>
-          <li>São Francisco - Califórnia</li>
-          <li>Estados Unidos da América</li>
-          <li><a href="#padrao">Telefone: (123) 456-7890</a></li>
-          <li><a href="#padrao">vendas@ecomerce.com</a></li>
-        </ul>
-      </nav>
-
-      <div>
+    <footer class="rodape">
+      <div class="container">
+        <nav>
+          <h3>Institucional</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#sobre-nos">Sobre</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#perguntas-frequentes">Perguntas frequentes</a></li>
+            <li><a href="#faq">Fale Conosco</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Ajuda</h3>
+          <ul>
+            <li><a href="#trocas">Trocas e Devoluções</a></li>
+            <li><a href="#termos">Termos e Condições</a></li>
+            <li><a href="#politica">Política de Privacidade</a></li>
+            <li><a href="#padrao">Padrão de Qualidade</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Endereço</h3>
+          <ul>
+            <li><a href="#">Rua Vale do Silício</a></li>
+            <li>São Francisco - Califórnia</li>
+            <li>Estados Unidos da América</li>
+            <li><a href="#padrao">Telefone: (123) 456-7890</a></li>
+            <li><a href="#padrao">vendas@ecomerce.com</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="copyright">
         <p>&copy; 2024 E-comerce Master. Todos os direitos reservados.</p>
       </div>
     </footer>
+   
 
     <!-- MODAL -->
-    <!-- [1] -->
-    <div id="modal-1" class="modal" aria-hidden="true">
-      <!-- [2] -->
+    <!-- <div id="modal-1" class="modal" aria-hidden="true">
       <div tabindex="-1" data-micromodal-close>
-        <!-- [3] -->
         <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
           <header>
             <h2 id="modal-1-title">Carrinho de Compras</h2>
-
-            <!-- [4] -->
             <button aria-label="Close modal" data-micromodal-close></button>
           </header>
 
@@ -242,9 +381,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script src="js/script.js"></script>
+    <script src="js/footer.js"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   </body>
 </html>

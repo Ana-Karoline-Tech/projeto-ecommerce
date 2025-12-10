@@ -3,9 +3,34 @@
   --cor-neutra-clara: #ffffff;
   --cor-primaria-hover: #834de8;
   --cor-primaria: #6528D3;
-  --cor-neutra-quaternaria: #444444;
-  --cor-neutra-quintaria: #555555;
+  --cor-cinza-escuro: #29272a;
+  --cor-cinza-clara: #EDEDED;
 }
+
+:root {
+  /* 🎯 CORES PRINCIPAIS */
+  --cor-primaria: #6528d3;
+  --cor-primaria-hover: #834de8;
+
+  /* 🎨 CORES NEUTRAS */
+  --cor-neutra-clara: #ffffff;
+  --cor-neutra-escura: #111111;
+  --cor-cinza-escura: #29272a;
+  --cor-cinza-clara: #ededed;
+  --cor-roxa-clara: #bca2ed; /* ✨ NOVA COR PARA LINKS! */
+
+  /* 📐 ESPAÇAMENTOS */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 3rem;
+  --espaco-xxl: 4rem;
+
+  /* 🎭 BORDAS */
+  --borda-radius: 8px;
+}
+
 
 body {
   font-family: "Roboto", sans-serif;
