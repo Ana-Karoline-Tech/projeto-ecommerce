@@ -1,0 +1,205 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal .container {
+  position: relative;
+  background-color: var(--cor-neutra-escuro);
+  color: var(--cor-neutra-clara);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.2rem;
+  height: 100vh;
+}
+
+.modal header {
+  margin-bottom: 2rem;
+}
+
+.modal header .fechar {
+  background-image: url("../assets/images/icone_fechar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 50;
+  text-indent: -9999px; 
+}
+
+.modal header .fechar:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(128, 64, 255, 0.12);
+}
+
+.modal header .fechar.debug {
+  background-color: rgba(255, 0, 0, 0.08);
+}
+
+.th-produto,
+.th-total,
+.td-produto,
+.td-preco-total {
+  display: none;
+}
+
+thead th,
+tbody td {
+  padding: 0.8rem;
+  vertical-align: middle;
+  background-color: var(--cor-cinza-escura);
+  color: var(--cor-roxa-clara);
+  letter-spacing: 0.01em;
+}
+
+td.td-preco-unitario {
+  color: var(--cor-neutra-clara);
+  font-size: 0.9rem;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+td.td-quantidade input {
+  width: 48px;
+  padding: 4px;
+  background-color: transparent;
+  border: 1px solid var(--cor-primaria);
+  border-radius: 4px;
+  color: var(--cor-cinza-clara);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+td .btn-remover {
+  display: block;
+  background-image: url("../assets/images/icone_deletar.svg");
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+}
+
+.container-preco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.total-carrinho {
+  background-color: var(--cor-cinza-escura);
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-neutra-clara);
+}
+
+.finalizar-compra {
+  background-color: var(--cor-primaria);
+  color: var(--cor-neutra-clara);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  letter-spacing: 0.01em;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.finalizar-compra:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+@media (min-width: 769px) {
+  .modal.is-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(00, 00, 00, 0.9);
+  }
+
+  .modal .container th {
+    background-color: var(--cor-neutra-escura);
+  }
+
+  .modal .container {
+    background-color: var(--cor-cinza-escura);
+    max-width: 720px;
+    height: auto;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  tbody td {
+    border: 2px solid var(--cor-neutra-escura);
+    padding: 0.5rem;
+  }
+
+  .table {
+    border-collapse: collapse;
+  }
+  
+  .th-produto,
+  .th-total,
+  .td-produto,
+  .td-preco-total {
+    display: table-cell;
+  }
+
+  .td-preco-total{
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--cor-neutra-clara);
+  }
+  
+  td img {
+    width: 48px;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .container-preco {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .total-carrinho {
+    text-align: right;
+  }
+
+  .finalizar-compra {
+    width: 369px;
+  }
+
+  .td-quantidade {
+    text-align: center;
+  }
+}
