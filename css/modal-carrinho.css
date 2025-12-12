@@ -23,7 +23,15 @@
 }
 
 .modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
+}
+
+.modal header h2 {
+  font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
 .modal header .fechar {
