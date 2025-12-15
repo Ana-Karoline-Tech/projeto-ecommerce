@@ -34,12 +34,37 @@ querySelectorAll(".adicionar-ao-carrinho");
 botoesAdicionarAoCarrinho.forEach(botao => {
     botao.addEventListener("click", (evento) => {
 
-//passo 3 - pega as informações do produto clicado e adicionar no localStorage
-const elementoProduto = evento.target.closest(".produto");
-const produtoId = elementoProduto.dataset.id;
-const produtoNome = elementoProduto.querySelector(".nome").textContent;
-const produtoImagem = elementoProduto.querySelector("img").getAttribute("src");
-const produtoPreco = parseFloat(elementoProduto.querySelector(".preco").textContent.replace("R$ ", "").replace(".", "").replace(",", "."));
+        // passo 3 - pega as informações do produto clicado e adicionar no localStorage
+        const elementoProduto = evento.target.closest(".produto");
+        if (!elementoProduto) {
+            console.warn('Elemento .produto não encontrado para o botão clicado');
+            return;
+        }
+
+        const produtoId = elementoProduto.dataset.id || String(Date.now());
+
+        // nome: tenta .nome, senão usa figcaption
+        const nomeEl = elementoProduto.querySelector('.nome') || elementoProduto.querySelector('figcaption');
+        const produtoNome = nomeEl ? nomeEl.textContent.trim() : 'Produto sem nome';
+
+        // imagem (verifica se existe)
+        const imgEl = elementoProduto.querySelector('img');
+        const produtoImagem = imgEl ? imgEl.getAttribute('src') : '';
+
+        // preço: tenta extrair número no formato brasileiro e normalizar
+        let produtoPreco = 0;
+        const precoEl = elementoProduto.querySelector('.preco');
+        if (precoEl && precoEl.textContent) {
+            const match = precoEl.textContent.match(/[0-9]+[.,]?[0-9]*/);
+            if (match) {
+                const raw = match[0].replace(/\./g, '').replace(',', '.');
+                produtoPreco = parseFloat(raw) || 0;
+            } else {
+                console.warn('Não foi possível extrair preço de:', precoEl.textContent);
+            }
+        } else {
+            console.warn('Elemento .preco não encontrado para produto', produtoId);
+        }
 
 //buscar a lista de produtos do localStorage
 const carrinho = obterProdutosDoCarrinho();
@@ -61,6 +86,7 @@ if(existeProduto){
 }
 
 salvarProdutosNoCarrinho(carrinho);
+atualizarContadorDoCarrinho();
     });
 });
 
@@ -73,4 +99,27 @@ function obterProdutosDoCarrinho() {
     const carrinhoJSON = localStorage.getItem("carrinho");
     return carrinhoJSON ? JSON.parse(carrinhoJSON) : [];
 }
+
+// passo 4 - atualizar o contador do carrinho de compras
+function atualizarContadorDoCarrinho() {
+    const carrinho = obterProdutosDoCarrinho();
+    let total = 0;
+
+    carrinho.forEach(produto => {
+        total += produto.quantidade;
+    });
+
+    // atualiza o contador no DOM (se o elemento existir)
+    const contadorEl = document.getElementById('contador-carrinho');
+    if (contadorEl) {
+        contadorEl.textContent = total;
+    } else {
+        // para debug, mantém o console.log se não encontrar o elemento
+        console.log('contador do carrinho (total):', total);
+    }
+
+}
+
+// garantir sincronização ao carregar a página
+document.addEventListener('DOMContentLoaded', atualizarContadorDoCarrinho);
 
